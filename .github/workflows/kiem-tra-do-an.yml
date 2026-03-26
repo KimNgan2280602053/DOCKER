@@ -1,0 +1,24 @@
+name: Kiem tra Project Docker cua Kim Ngan  # Tên quy trình tùy chỉnh
+
+on:
+  push:
+    branches: [ "main" ]  # Kích hoạt khi bạn đẩy code lên GitHub
+
+jobs:
+  kiem_tra_he_thong:
+    runs-on: ubuntu-latest  # Sử dụng máy ảo của GitHub
+
+    steps:
+      - name: 1. Loi chao tu Sinh vien
+        run: |
+          echo " Nguyen Da Kim Ngan"
+          echo "MSSV: 2280602053"
+          echo " kiem tra quy trinh GitHub Actions."
+
+      - name: 2. Lay ma nguon tu Repository
+        uses: actions/checkout@v6.0.2  # Robot tự động sao chép code vào máy ảo
+
+      - name: 3. Liet ke danh sach file Docker
+        run: |
+          echo "Danh sach cac tep tin co trong thu muc du an:"
+          ls -la  # Lệnh liet ke tat ca cac file (thay cho lenh cat README)
